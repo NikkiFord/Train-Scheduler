@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Train Scheduler</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-xs-12 offset-lg-2 mb-3">
+        <div id="trainSchedule">
+          <div class="box-header">Current Train Schedule</div>
+          <div class="box-content">
+            <table id="trainList"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-xs-12 offset-lg-2">
+        <div class="box-header">Add Train</div>
+        <div class="box-content">
+          <form id="addTrain">
+            <div class="form-group">
+              <label for="name">Train Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <input type="text" class="form-control" id="destination">
+            </div>
+            <div class="form-group">
+              <label for="firstDeparture">First Departure (HH:mm - military time)</label>
+              <input type="text" class="form-control" id="firstDeparture">
+            </div>
+            <div class="form-group">
+              <label for="frequency">Frequency (min)</label>
+              <input type="text" class="form-control" id="frequency">
+            </div>
+            <button class="btn btn-success">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCXZD0uhtZQTMI5dRAeF-2oGLy2T8vNAOo",
+      authDomain: "train-scheduler-86525.firebaseapp.com",
+      databaseURL: "https://train-scheduler-86525.firebaseio.com",
+      projectId: "train-scheduler-86525",
+      storageBucket: "train-scheduler-86525.appspot.com",
+      messagingSenderId: "177501835810",
+      appId: "1:177501835810:web:0463ffc8b830f40e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
